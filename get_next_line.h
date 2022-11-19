@@ -6,7 +6,7 @@
 /*   By: datran <datran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 22:19:07 by datran            #+#    #+#             */
-/*   Updated: 2022/11/17 23:28:01 by datran           ###   ########.fr       */
+/*   Updated: 2022/11/20 00:03:40 by datran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@
 # include <stdio.h>
 
 # ifndef OPEN_MAX
-# define OPEN_MAX 256
+# 	define OPEN_MAX 1024
 # endif
 
 # ifndef BUFFER_SIZE
-# define BUFFER_SIZE 10
+# 	define BUFFER_SIZE 1024
 # endif
 
 size_t	ft_strlen(const char *str);
@@ -38,4 +38,3 @@ void	split_store(char **store, char **line);
 int		get_next_line(int fd, char **line);
 
 #endif
-

@@ -6,7 +6,7 @@
 /*   By: datran <datran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 22:17:12 by datran            #+#    #+#             */
-/*   Updated: 2022/11/17 23:38:11 by datran           ###   ########.fr       */
+/*   Updated: 2022/11/19 18:15:06 by datran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	char			*sub;
 	unsigned int	i;
 	size_t			slen;
-	
+
 	slen = ft_strlen(s);
 	sub = (char *)malloc(sizeof(char) * (slen - start + 1));
 	if (!sub || !s)
@@ -75,12 +75,29 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	return (sub);
 }
 
-int main()
+char	*ft_strjoin(char *s1, char *s2)
 {
-	char *s = ft_strdup("hello world");
-	unsigned int start = 7;
-	size_t	len = 10;
-	printf("%s\n", ft_substr(s, start, len));
-	printf("%lu\n", ft_strlen(ft_substr(s, start, len)));
-	return (0);
+	size_t	lens1;
+	size_t	lens2;
+	char	*join;
+	size_t	i;
+	size_t	j;
+
+	join = (char *)malloc(sizeof(char) * (lens1 + lens1 + 1));
+	if (!s1 || !s2 || !join)
+		return (NULL);
+	i = 0;
+	while (s1[i])
+	{
+		join[i] = s1[i];
+		i++;
+	}
+	j = 0;
+	while (s2[j])
+	{
+		join[i + j] = s2[j];
+		j++;
+	}
+	join[i + j] = 0;
+	return (join);
 }
